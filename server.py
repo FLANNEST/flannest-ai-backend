@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
 import requests
-
+import os
 app = Flask(__name__)
 
-OPENROUTER_API_KEY = "APNI_API_KEY_YAHAN_DALO"
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 
 @app.route("/chat", methods=["POST"])
 def chat():
